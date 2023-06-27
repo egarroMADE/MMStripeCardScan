@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'MMStripeCardScan_Example' do
+  pod 'MMStripeCardScan', :path => '../'
+
+  target 'MMStripeCardScan_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
