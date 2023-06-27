@@ -1,0 +1,6 @@
+framework module MMStripeCardScan {
+  umbrella header "MMStripeCardScan-umbrella.h"
+
+  export *
+  module * { export * }
+}

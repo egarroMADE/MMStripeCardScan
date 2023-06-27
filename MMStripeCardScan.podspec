@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MMStripeCardScan'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of MMStripeCardScan.'
+  s.version          = '1.0.0'
+  s.summary          = 'Fork of StripeCardScan to support expiry dates'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -17,9 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.description      = 'Modified CardScanSheet and SimpleScanViewController to expect expiryMonth and expiryYear'
 
   s.homepage         = 'https://github.com/egarroMADE/MMStripeCardScan'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
@@ -28,15 +26,19 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/egarroMADE/MMStripeCardScan.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '13.0'
+  s.requires_arc = true
 
   s.source_files = 'MMStripeCardScan/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'MMStripeCardScan' => ['MMStripeCardScan/Assets/*.png']
-  # }
+  s.swift_versions = ['5.0']
+  s.dependency 'StripeCore', '23.4.0'
+
+  s.resource_bundles = {
+    'MMStripeCardScan' => ['MMStripeCardScan/Classes/Resources/**/*.{lproj,mlmodelc}']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit', 'Foundation'
+  s.weak_frameworks = 'AVKit', 'CoreML', 'VideoToolbox', 'Vision', 'AVFoundation'
+  
 end

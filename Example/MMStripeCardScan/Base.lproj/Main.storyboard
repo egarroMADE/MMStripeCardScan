@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,11 +18,46 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Do7-20-Nje">
+                                <rect key="frame" x="122.5" y="316" width="130" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Open Camera"/>
+                                <connections>
+                                    <action selector="buttonAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="mAC-Pa-xjf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Credit Card Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAs-nt-vMn">
+                                <rect key="frame" x="111" y="386" width="153" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiry Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eXu-rp-U9R">
+                                <rect key="frame" x="144" y="427" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iAs-nt-vMn" firstAttribute="top" secondItem="Do7-20-Nje" secondAttribute="bottom" constant="35" id="Apx-qa-OQu"/>
+                            <constraint firstItem="eXu-rp-U9R" firstAttribute="top" secondItem="iAs-nt-vMn" secondAttribute="bottom" constant="20" id="FCO-mG-Fsu"/>
+                            <constraint firstItem="Do7-20-Nje" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="VDK-Jv-m4z"/>
+                            <constraint firstItem="iAs-nt-vMn" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="eEM-aJ-jUd"/>
+                            <constraint firstItem="Do7-20-Nje" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="lRo-WK-muf"/>
+                            <constraint firstItem="eXu-rp-U9R" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ous-cg-adN"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="creditCardLabel" destination="iAs-nt-vMn" id="Rdk-5V-34l"/>
+                        <outlet property="expiryDateLabel" destination="eXu-rp-U9R" id="23E-Es-vdf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="119.2" y="-2.2488755622188905"/>
         </scene>
     </scenes>
 </document>

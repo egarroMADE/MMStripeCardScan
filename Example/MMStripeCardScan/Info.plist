@@ -35,5 +35,7 @@
 		<string>UIInterfaceOrientationPortrait</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>We need access to the camera to scan your card</string>
 </dict>
 </plist>
