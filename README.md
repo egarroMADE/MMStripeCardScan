@@ -11,6 +11,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 ## Requirements
 
+MMStripeCardScan only works on iOS13! It can be included on projects whose deployment target is iOS12, but it won't work. 
+Such projects must use conditional directives `if #available(iOS 13,*)` and find other alternatives such as Card.IO to support iOS12.
+
 ## Installation
 
 MMStripeCardScan is available through [CocoaPods](https://cocoapods.org). To install
