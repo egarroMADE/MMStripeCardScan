@@ -10,9 +10,9 @@ import Foundation
 
 final class StripeCoreBundleLocator: BundleLocatorProtocol {
     static let internalClass: AnyClass = StripeCoreBundleLocator.self
-    static let bundleName = "StripeCore"
+    static let bundleName = "StripeCoreBundle"
     #if SWIFT_PACKAGE
-    static let spmResourcesBundle = Bundle.module
+        static let spmResourcesBundle = Bundle.module
     #endif
     static let resourcesBundle = StripeCoreBundleLocator.computeResourcesBundle()
 }

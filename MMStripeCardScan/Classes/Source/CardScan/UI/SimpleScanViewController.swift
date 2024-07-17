@@ -109,7 +109,7 @@ class SimpleScanViewController: ScanBaseViewController {
     static var enableCameraPermissionsDescriptionString = String.Localized.update_phone_settings
     static var closeButtonString = String.Localized.close
     static var torchButtonString = String.Localized.torch
-    static var privacyLinkString = Optional("") // String.Localized.scanCardExpectedPrivacyLinkText()
+    static var privacyLinkString = String.Localized.scanCardExpectedPrivacyLinkText()
 
     weak var delegate: SimpleScanDelegate?
     var scanPerformancePriority: ScanPerformance = .fast
@@ -149,9 +149,7 @@ class SimpleScanViewController: ScanBaseViewController {
             torchLevel: 1.0
         )
 
-        if #available(iOS 13.0, *) {
-            setUpMainLoop(errorCorrectionDuration: maxErrorCorrectionDuration)
-        }
+        setUpMainLoop(errorCorrectionDuration: maxErrorCorrectionDuration)
 
         startCameraPreview()
     }
@@ -166,7 +164,6 @@ class SimpleScanViewController: ScanBaseViewController {
         torchButton.removeTarget(self, action: #selector(torchButtonPress), for: .touchUpInside)
     }
 
-    @available(iOS 13.0, *)
     func setUpMainLoop(errorCorrectionDuration: Double) {
         if scanPerformancePriority == .accurate {
             let mainLoop = self.mainLoop as? OcrMainLoop
@@ -303,7 +300,7 @@ class SimpleScanViewController: ScanBaseViewController {
 
     func setupPrivacyLinkTextUi() {
         if let attributedString = SimpleScanViewController.privacyLinkString {
-            privacyLinkText.attributedText = NSAttributedString(string: attributedString, attributes: [:])
+            privacyLinkText.attributedText = attributedString
         }
 
         privacyLinkText.textColor = .white

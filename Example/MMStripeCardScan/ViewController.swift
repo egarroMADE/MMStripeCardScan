@@ -29,10 +29,10 @@ class ViewController: UIViewController {
         cardScanSheet.present(from: self) { [weak self] result in
                     guard let strongSelf = self else { return }
                     switch result {
-                        case .completed(let scannedCard, let expiryMonth, let expiryYear):
+                        case .completed(let scannedCard):
                         strongSelf.creditCardLabel.text = scannedCard.pan
                         
-                        let expiryDate = [expiryMonth,expiryYear].compactMap { $0 }
+                        let expiryDate = [scannedCard.expiryMonth,scannedCard.expiryYear].compactMap { $0 }
                                                                  .joined(separator: "/")
                         strongSelf.expiryDateLabel.text = expiryDate
                     case .canceled:
