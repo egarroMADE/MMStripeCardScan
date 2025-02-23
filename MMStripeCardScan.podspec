@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MMStripeCardScan'
-  s.version          = '1.3.0'
+  s.version          = '1.4.0'
   s.summary          = 'Fork of StripeCardScan to support expiry dates'
 
 # This description is used to generate tags and improve search results.
@@ -26,12 +26,12 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/egarroMADE/MMStripeCardScan.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '13.0'
+  s.ios.deployment_target = '14.0'
   s.requires_arc = true
 
   s.source_files = 'MMStripeCardScan/Classes/**/*'
   s.swift_versions = ['5.0']
-  s.dependency 'StripeCore', '24.4.1'
+  s.dependency 'StripeCore', '24.6.0'
 
   s.resource_bundles = {
     'MMStripeCardScan' => ['MMStripeCardScan/Classes/Resources/**/*.{lproj,mlmodelc}']
