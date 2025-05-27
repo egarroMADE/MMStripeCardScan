@@ -69,6 +69,7 @@ class ScanBaseViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
     // Child classes should override these functions
     func onScannedCard(
         number: String,
+        dni: String?,
         expiryYear: String?,
         expiryMonth: String?,
         scannedImage: UIImage?
@@ -272,7 +273,7 @@ class ScanBaseViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
         setNeedsStatusBarAppearanceUpdate()
         regionOfInterestLabel.layer.masksToBounds = true
         regionOfInterestLabel.layer.cornerRadius = self.regionOfInterestCornerRadius
-        regionOfInterestLabel.layer.borderColor = UIColor.white.cgColor
+        regionOfInterestLabel.layer.borderColor = UIColor.green.cgColor
         regionOfInterestLabel.layer.borderWidth = 2.0
 
         if !ScanBaseViewController.isPadAndFormsheet {
@@ -486,6 +487,7 @@ class ScanBaseViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
         predictedName = creditCardOcrResult.name
         self.onScannedCard(
             number: creditCardOcrResult.number,
+            dni: creditCardOcrResult.dni,
             expiryYear: creditCardOcrResult.expiryYear,
             expiryMonth: creditCardOcrResult.expiryMonth,
             scannedImage: scannedCardImage
@@ -543,6 +545,12 @@ class ScanBaseViewController: UIViewController, AVCaptureVideoDataOutputSampleBu
                     imageData: imageData,
                     centeredCardState: prediction.centeredCardState,
                     flashForcedOn: isFlashForcedOn
+                )
+            }
+        } else if let dni = prediction.dni {
+            ScanBaseViewController.machineLearningQueue.async {
+                self.scanEventsDelegate?.onDNIRecognized(
+                    dni: dni
                 )
             }
         } else {

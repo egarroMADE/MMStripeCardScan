@@ -11,17 +11,20 @@ import Foundation
 /// the card image verification flow
 public struct ScannedCard: Equatable {
     public let pan: String
+    public let dni: String?
     public let expiryMonth: String?
     public let expiryYear: String?
     public let name: String?
 
     init(
         pan: String,
+        dni: String? = nil,
         expiryMonth: String? = nil,
         expiryYear: String? = nil,
         name: String? = nil
     ) {
         self.pan = pan
+        self.dni = dni
         self.expiryMonth = expiryMonth
         self.expiryYear = expiryYear
         self.name = name
@@ -32,6 +35,7 @@ extension ScannedCard {
     init(scannedCard: CreditCard) {
         self.init(
             pan: scannedCard.number,
+            dni: scannedCard.dni,
             expiryMonth: scannedCard.expiryMonth,
             expiryYear: scannedCard.expiryYear,
             name: scannedCard.name

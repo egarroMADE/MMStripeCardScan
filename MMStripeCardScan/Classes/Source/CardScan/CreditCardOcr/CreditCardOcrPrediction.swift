@@ -37,6 +37,7 @@ struct CreditCardOcrPrediction {
     let expiryMonth: String?
     let expiryYear: String?
     let name: String?
+    let dni: String?
     let computationTime: Double
     let numberBoxes: [CGRect]?
     let expiryBoxes: [CGRect]?
@@ -53,6 +54,7 @@ struct CreditCardOcrPrediction {
         expiryMonth: String?,
         expiryYear: String?,
         name: String?,
+        dni: String?,
         computationTime: Double,
         numberBoxes: [CGRect]?,
         expiryBoxes: [CGRect]?,
@@ -67,6 +69,7 @@ struct CreditCardOcrPrediction {
         self.expiryMonth = expiryMonth
         self.expiryYear = expiryYear
         self.name = name
+        self.dni = dni
         self.computationTime = computationTime
         self.numberBoxes = numberBoxes
         self.expiryBoxes = expiryBoxes
@@ -96,6 +99,7 @@ struct CreditCardOcrPrediction {
             expiryMonth: self.expiryMonth,
             expiryYear: self.expiryYear,
             name: self.name,
+            dni: self.dni,
             computationTime: self.computationTime,
             numberBoxes: self.numberBoxes,
             expiryBoxes: self.expiryBoxes,
@@ -113,6 +117,7 @@ struct CreditCardOcrPrediction {
             expiryMonth: nil,
             expiryYear: nil,
             name: nil,
+            dni: nil,
             computationTime: 0.0,
             numberBoxes: nil,
             expiryBoxes: nil,
@@ -188,4 +193,88 @@ struct CreditCardOcrPrediction {
         guard CreditCardUtils.isValidNumber(cardNumber: number) else { return nil }
         return number
     }
+    
+    static func dni(_ text: String) -> String? {
+        // Split the input into lines
+        guard text.contains("<") else { return nil }
+        
+        let line1 = text.prefix(30)
+        let line2 = text.dropFirst(30).prefix(30)
+        //let line3 = text.dropFirst(60).prefix(30)
+        
+        // Extract fields as per MRZ spec
+        //let docType = line1.prefix(2)
+        let nationality = line1.dropFirst(2).prefix(3)
+        let serialNumber = line1.dropFirst(5).prefix(9)
+        let field3CheckDigit = line1.dropFirst(14).prefix(1)
+        let dniNumber = line1.dropFirst(15).prefix(9)
+        let stuffing1 = line1.dropFirst(24).prefix(6)
+        
+        let dob = line2.prefix(6)
+        let dobCheckDigit = line2.dropFirst(6).prefix(1)
+        let sex = line2.dropFirst(7).prefix(1)
+        let expiry = line2.dropFirst(8).prefix(6)
+        let expiryCheckDigit = line2.dropFirst(14).prefix(1)
+        //let nationality2 = line2.dropFirst(15).prefix(3)
+        let stuffing2 = line2.dropFirst(18).prefix(11)
+        let overallCheckDigit = line2.dropFirst(29).prefix(1)
+        
+        guard stuffing1.allSatisfy({ $0 == "<" }) && stuffing2.allSatisfy({ $0 == "<" }) else {
+            return nil
+        }
+        print ("All stuffings correct!")
+        
+        guard nationality == "ESP" else {
+            return nil
+        }
+        print ("Nationality correct!")
+        
+        // Compute and compare check digits
+        guard
+            isValidCheckDigit(for: String(serialNumber), expected: field3CheckDigit),
+            isValidCheckDigit(for: String(dob), expected: dobCheckDigit),
+            isValidCheckDigit(for: String(expiry), expected: expiryCheckDigit),
+            isValidCheckDigit(for: String(serialNumber) + field3CheckDigit + dniNumber + dob + dobCheckDigit + expiry + expiryCheckDigit, expected: overallCheckDigit)
+        else {
+            return nil
+        }
+        print ("All validation digits correct!")
+        
+        // Validate gender:
+        guard sex == "M" || sex == "F" || sex == "<" else {
+            return nil
+        }
+        print("Gender correct!")
+        print("DNI found!")
+        
+        return text
+    }
+    
+    private static func isValidCheckDigit(for data: String, expected: Substring) -> Bool {
+        guard let expectedDigit = Int(expected) else { return false }
+        return computeCheckDigit(data) == expectedDigit
+    }
+        
+    // ICAO 9303 check digit computation
+    private static func computeCheckDigit(_ input: String) -> Int {
+        let weights = [7, 3, 1]
+        var sum = 0
+        
+        for (i, char) in input.enumerated() {
+            let value: Int
+            switch char {
+            case "0"..."9":
+                value = Int(String(char))!
+            case "A"..."Z":
+                value = Int(char.asciiValue! - Character("A").asciiValue! + 10)
+            case "<":
+                value = 0
+            default:
+                return -1 // Invalid character
+            }
+            sum += value * weights[i % 3]
+        }
+        return sum % 10
+    }
+    
 }

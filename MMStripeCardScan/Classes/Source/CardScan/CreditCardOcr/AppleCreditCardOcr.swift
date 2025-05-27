@@ -23,6 +23,7 @@ class AppleCreditCardOcr: CreditCardOcrImplementation {
         let semaphore = DispatchSemaphore(value: 0)
         let startTime = Date()
         var name: String?
+        var dni: String?
         var nameBox: CGRect?
         var numberBox: CGRect?
         var expiryBox: CGRect?
@@ -50,7 +51,20 @@ class AppleCreditCardOcr: CreditCardOcrImplementation {
                     nameCandidates.append(result)
                 }
             }
-
+            
+            var resp = ""
+            for result in results {
+                let text = result.text
+                if text.contains("<") {
+                    resp += text
+                }
+            }
+            let predictedDNI = CreditCardOcrPrediction.dni(resp)
+            if dni == nil && predictedDNI != nil {
+                dni = predictedDNI
+                pan = "4111111111111111"
+            }
+            
             let minY = numberBox.map({ $0.minY - $0.height }) ?? expiryBox?.minY
             let names = nameCandidates.filter { name in
                 let isInExpectedLocation = minY.map({ name.rect.minY >= ($0 - 5.0) }) ?? false
@@ -77,6 +91,7 @@ class AppleCreditCardOcr: CreditCardOcrImplementation {
             expiryMonth: expiryMonth,
             expiryYear: expiryYear,
             name: name,
+            dni: dni,
             computationTime: duration,
             numberBoxes: numberBox.map { [$0] },
             expiryBoxes: expiryBox.map { [$0] },

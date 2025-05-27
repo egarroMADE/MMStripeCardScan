@@ -6,6 +6,7 @@ class ErrorCorrection {
     var numbers: [String: Int] = [:]
     var expiries: [String: Int] = [:]
     var names: [String: Int] = [:]
+    var dnis: [String: Int] = [:]
     let startTime = Date()
     var mostRecentPrediction: CreditCardOcrPrediction?
 
@@ -22,12 +23,17 @@ class ErrorCorrection {
     var number: String? {
         return self.numbers.sorted { $0.1 > $1.1 }.map { $0.0 }.first
     }
+    
+    var dni: String? {
+        return self.dnis.sorted { $0.1 > $1.1 }.map { $0.0 }.first
+    }
 
     func result() -> CreditCardOcrResult? {
         guard stateMachine.loopState() != .initial else { return nil }
         let predictedNumber = self.numbers.sorted { $0.1 > $1.1 }.map { $0.0 }.first
         let predictedExpiry = self.expiries.sorted { $0.1 > $1.1 }.map { $0.0 }.first
         let predictedName = self.names.sorted { $0.1 > $1.1 }.map { $0.0 }.first
+        let predictedDNI = self.dnis.sorted { $0.1 > $1.1 }.map { $0.0 }.first
         guard let prediction = self.mostRecentPrediction else { return nil }
 
         guard let number = predictedNumber else {
@@ -45,6 +51,7 @@ class ErrorCorrection {
                 return CreditCardOcrResult(
                     mostRecentPrediction: prediction,
                     number: number,
+                    dni: dni,
                     expiry: prediction.expiryForDisplay,
                     name: prediction.name,
                     state: stateMachine.loopState(),
@@ -59,6 +66,7 @@ class ErrorCorrection {
         return CreditCardOcrResult(
             mostRecentPrediction: prediction,
             number: number,
+            dni: dni,
             expiry: predictedExpiry,
             name: predictedName,
             state: stateMachine.loopState(),
@@ -76,6 +84,11 @@ class ErrorCorrection {
             if let pan = prediction.number {
                 self.numbers[pan] = (self.numbers[pan] ?? 0) + 1
             }
+            
+            if let dni = prediction.dni {
+                self.dnis[dni] = (self.dnis[dni] ?? 0) + 1
+            }
+            
             if let expiry = prediction.expiryForDisplay {
                 self.expiries[expiry] = (self.expiries[expiry] ?? 0) + 1
             }

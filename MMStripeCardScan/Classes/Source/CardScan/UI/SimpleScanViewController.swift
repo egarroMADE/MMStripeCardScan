@@ -150,7 +150,6 @@ class SimpleScanViewController: ScanBaseViewController {
         )
 
         setUpMainLoop(errorCorrectionDuration: maxErrorCorrectionDuration)
-
         startCameraPreview()
     }
 
@@ -454,11 +453,13 @@ class SimpleScanViewController: ScanBaseViewController {
     // MARK: - Override some ScanBase functions
     override func onScannedCard(
         number: String,
+        dni: String?,
         expiryYear: String?,
         expiryMonth: String?,
         scannedImage: UIImage?
     ) {
         let card = CreditCard(number: number)
+        card.dni = dni
         card.expiryMonth = expiryMonth
         card.expiryYear = expiryYear
         card.name = predictedName
@@ -473,6 +474,10 @@ class SimpleScanViewController: ScanBaseViewController {
         }
 
         numberText.text = CreditCardUtils.format(number: number)
+        print(numberText.text)
+        if numberText.text == "4111 1111 1111 1111" {
+            numberText.text = "DNI FOUND!"
+        }
         if numberText.isHidden {
             numberText.fadeIn()
         }

@@ -71,6 +71,17 @@ class CardScanFraudData: ScanEvents {
         }
     }
 
+    func onDNIRecognized(
+        dni: String,
+    ) {
+        mutexQueue.async {
+            if self.hasModelBeenCalled {
+                return
+            }
+            self.balanceFrames()
+        }
+    }
+    
     func onNumberRecognized(
         number: String,
         expiry: Expiry?,

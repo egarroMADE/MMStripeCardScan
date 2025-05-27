@@ -13,6 +13,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var creditCardLabel: UILabel!
     @IBOutlet weak var expiryDateLabel: UILabel!
+    @IBOutlet weak var dniLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +36,7 @@ class ViewController: UIViewController {
                         let expiryDate = [scannedCard.expiryMonth,scannedCard.expiryYear].compactMap { $0 }
                                                                  .joined(separator: "/")
                         strongSelf.expiryDateLabel.text = expiryDate
+                        strongSelf.dniLabel.text = scannedCard.dni
                     case .canceled:
                         print("scan canceled")
                     case .failed(let error):
