@@ -144,6 +144,7 @@ class VerifyCardAddViewController: SimpleScanViewController {
     // MARK: - Override some ScanBase functions
     override func onScannedCard(
         number: String,
+        dni: String?,
         expiryYear: String?,
         expiryMonth: String?,
         scannedImage: UIImage?

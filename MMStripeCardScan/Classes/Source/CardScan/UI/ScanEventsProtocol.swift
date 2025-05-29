@@ -17,6 +17,7 @@ protocol ScanEvents {
         centeredCardState: CenteredCardState?,
         flashForcedOn: Bool
     )
+    mutating func onDNIRecognized(dni: String)
     mutating func onScanComplete(scanStats: ScanStats)
     mutating func onFrameDetected(
         imageData: ScannedCardImageData,

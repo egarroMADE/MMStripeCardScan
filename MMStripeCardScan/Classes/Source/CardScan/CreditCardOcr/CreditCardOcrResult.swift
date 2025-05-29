@@ -11,6 +11,7 @@ import Foundation
 class CreditCardOcrResult: MachineLearningResult {
     let mostRecentPrediction: CreditCardOcrPrediction
     let number: String
+    let dni: String?
     let expiry: String?
     let name: String?
     let state: MainLoopState
@@ -21,6 +22,7 @@ class CreditCardOcrResult: MachineLearningResult {
     init(
         mostRecentPrediction: CreditCardOcrPrediction,
         number: String,
+        dni: String?,
         expiry: String?,
         name: String?,
         state: MainLoopState,
@@ -29,6 +31,7 @@ class CreditCardOcrResult: MachineLearningResult {
     ) {
         self.mostRecentPrediction = mostRecentPrediction
         self.number = number
+        self.dni = dni
         self.expiry = expiry
         self.name = name
         self.state = state
@@ -50,6 +53,7 @@ class CreditCardOcrResult: MachineLearningResult {
         let result = CreditCardOcrResult(
             mostRecentPrediction: prediction,
             number: "",
+            dni: nil,
             expiry: nil,
             name: nil,
             state: .finished,

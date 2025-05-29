@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -39,19 +39,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DNI Number" textAlignment="center" lineBreakMode="characterWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nyM-5h-bwa">
+                                <rect key="frame" x="44" y="468" width="287" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="6N5-2H-7xW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="iAs-nt-vMn" firstAttribute="top" secondItem="Do7-20-Nje" secondAttribute="bottom" constant="35" id="Apx-qa-OQu"/>
                             <constraint firstItem="eXu-rp-U9R" firstAttribute="top" secondItem="iAs-nt-vMn" secondAttribute="bottom" constant="20" id="FCO-mG-Fsu"/>
+                            <constraint firstItem="nyM-5h-bwa" firstAttribute="top" secondItem="eXu-rp-U9R" secondAttribute="bottom" constant="20" id="O3c-EJ-30c"/>
                             <constraint firstItem="Do7-20-Nje" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="VDK-Jv-m4z"/>
+                            <constraint firstItem="nyM-5h-bwa" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="Zyg-1O-36a"/>
                             <constraint firstItem="iAs-nt-vMn" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="eEM-aJ-jUd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nyM-5h-bwa" secondAttribute="trailing" constant="28" id="eId-3R-oOA"/>
                             <constraint firstItem="Do7-20-Nje" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="lRo-WK-muf"/>
                             <constraint firstItem="eXu-rp-U9R" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="ous-cg-adN"/>
+                            <constraint firstItem="nyM-5h-bwa" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="28" id="ov1-gp-tVn"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="creditCardLabel" destination="iAs-nt-vMn" id="Rdk-5V-34l"/>
+                        <outlet property="dniLabel" destination="nyM-5h-bwa" id="9kL-Xj-xRl"/>
                         <outlet property="expiryDateLabel" destination="eXu-rp-U9R" id="23E-Es-vdf"/>
                     </connections>
                 </viewController>
