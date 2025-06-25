@@ -10,14 +10,14 @@ import Foundation
 /// An struct that contains the PAN of the scanned card during
 /// the card image verification flow
 public struct ScannedCard: Equatable {
-    public let pan: String
+    public let pan: String?
     public let dni: String?
     public let expiryMonth: String?
     public let expiryYear: String?
     public let name: String?
 
     init(
-        pan: String,
+        pan: String? = nil,
         dni: String? = nil,
         expiryMonth: String? = nil,
         expiryYear: String? = nil,
