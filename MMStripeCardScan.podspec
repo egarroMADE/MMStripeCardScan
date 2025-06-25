@@ -37,6 +37,10 @@ Pod::Spec.new do |s|
     'MMStripeCardScan' => ['MMStripeCardScan/Classes/Resources/**/*.{lproj,mlmodelc}']
   }
 
+  s.pod_target_xcconfig = {
+    'EXCLUDED_ARCHITECTURES' => 'x86_64'
+  }
+
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'Foundation'
   s.weak_frameworks = 'AVKit', 'CoreML', 'VideoToolbox', 'Vision', 'AVFoundation'
