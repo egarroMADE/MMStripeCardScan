@@ -31,12 +31,12 @@ class ViewController: UIViewController {
                     guard let strongSelf = self else { return }
                     switch result {
                         case .completed(let scannedCard):
-                        strongSelf.creditCardLabel.text = scannedCard.pan
-                        
+                        strongSelf.creditCardLabel.text = scannedCard.pan //This could be nil
+                        //This could be an empty string:
                         let expiryDate = [scannedCard.expiryMonth,scannedCard.expiryYear].compactMap { $0 }
                                                                  .joined(separator: "/")
                         strongSelf.expiryDateLabel.text = expiryDate
-                        strongSelf.dniLabel.text = scannedCard.dni
+                        strongSelf.dniLabel.text = scannedCard.dni //This could be nil
                     case .canceled:
                         print("scan canceled")
                     case .failed(let error):

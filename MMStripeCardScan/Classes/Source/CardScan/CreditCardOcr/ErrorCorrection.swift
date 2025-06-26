@@ -33,7 +33,7 @@ class ErrorCorrection {
         let predictedNumber = self.numbers.sorted { $0.1 > $1.1 }.map { $0.0 }.first
         let predictedExpiry = self.expiries.sorted { $0.1 > $1.1 }.map { $0.0 }.first
         let predictedName = self.names.sorted { $0.1 > $1.1 }.map { $0.0 }.first
-        let predictedDNI = self.dnis.sorted { $0.1 > $1.1 }.map { $0.0 }.first
+        let _ = self.dnis.sorted { $0.1 > $1.1 }.map { $0.0 }.first
         guard let prediction = self.mostRecentPrediction else { return nil }
 
         guard let number = predictedNumber else {

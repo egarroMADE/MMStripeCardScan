@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MMStripeCardScan'
-  s.version          = '1.5.0'
+  s.version          = '1.5.1'
   s.summary          = 'Fork of StripeCardScan to support expiry dates and DNI detection'
 
 # This description is used to generate tags and improve search results.
@@ -37,8 +37,30 @@ Pod::Spec.new do |s|
     'MMStripeCardScan' => ['MMStripeCardScan/Classes/Resources/**/*.{lproj,mlmodelc}']
   }
 
+  s.pod_target_xcconfig = {
+    'EXCLUDED_ARCHITECTURES[sdk=iphonesimulator*]' => 'x86_64',
+    'VALID_ARCHS' => 'arm64',
+    'ARCHS' => 'arm64'
+  }
+
+  s.user_target_xcconfig = {
+    'EXCLUDED_ARCHITECTURES[sdk=iphonesimulator*]' => 'x86_64'
+  }
+  
+  s.exclude_files = [
+    'MMStripeCardScan/Classes/Resources/**/*.espresso.weights',
+    'MMStripeCardScan/Classes/Resources/**/*.bin',
+    'MMStripeCardScan/Classes/Resources/**/*.macbinary',
+    'MMStripeCardScan/Classes/Resources/**/*.json',           # New
+    'MMStripeCardScan/Classes/Resources/**/*.espresso.net',   # New  
+    'MMStripeCardScan/Classes/Resources/**/*.espresso.shape'  # New
+  ]
+
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'Foundation'
   s.weak_frameworks = 'AVKit', 'CoreML', 'VideoToolbox', 'Vision', 'AVFoundation'
   
+  # Preserve the Core ML model structure
+  s.preserve_paths = 'MMStripeCardScan/Classes/Resources/**/*.mlmodelc'
+
 end

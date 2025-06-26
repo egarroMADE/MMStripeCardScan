@@ -474,7 +474,6 @@ class SimpleScanViewController: ScanBaseViewController {
         }
 
         numberText.text = CreditCardUtils.format(number: number)
-        print(numberText.text)
         if numberText.text == "4111 1111 1111 1111" {
             numberText.text = "DNI FOUND!"
         }
