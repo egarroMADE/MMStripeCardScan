@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MMStripeCardScan'
-  s.version          = '1.5.4'
+  s.version          = '1.5.5'
   s.summary          = 'Fork of StripeCardScan to support expiry dates and DNI detection'
 
 # This description is used to generate tags and improve search results.
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
 
   s.source_files = 'MMStripeCardScan/Classes/**/*'
   s.swift_versions = ['5.0']
-  s.dependency 'StripeCore', '24.6.0'
+  s.dependency 'StripeCore'
 
   s.resource_bundles = {
     'MMStripeCardScan' => ['MMStripeCardScan/Classes/Resources/**/*.{lproj,mlmodelc}']

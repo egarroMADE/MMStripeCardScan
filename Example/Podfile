@@ -4,6 +4,7 @@ platform :ios, '14.0'
 
 target 'MMStripeCardScan_Example' do
   pod 'MMStripeCardScan', :path => '../'
+  pod 'StripeCore', :path => '../'
 
   target 'MMStripeCardScan_Tests' do
     inherit! :search_paths
