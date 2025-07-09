@@ -7,3 +7,5 @@
 "To scan your card you'll need to update your phone settings" = "Para analisar o seu cartão, precisa de atualizar as definições do telemóvel";
 
 "Torch" = "Lanterna";
+
+"We use Stripe to verify your card details. Stripe may use and store your data according its privacy policy. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Learn more</u></a>" = "Posicione o seu cartão dentro do retângulo acima. O OnBoard utilizará a câmara para extrair e preencher automaticamente apenas as informações do cartão exigidas no formulário.";

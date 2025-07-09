@@ -7,3 +7,5 @@
 "To scan your card you'll need to update your phone settings" = "要掃描金融卡，您需要更新您的手機設定";
 
 "Torch" = "手電筒";
+
+"We use Stripe to verify your card details. Stripe may use and store your data according its privacy policy. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Learn more</u></a>" = "請將您的卡片放置在上方的矩形框內。 OnBoard 將使用攝影機自動提取並填充表格中所需的卡片資訊。";

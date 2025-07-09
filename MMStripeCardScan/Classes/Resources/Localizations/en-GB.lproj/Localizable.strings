@@ -7,3 +7,5 @@
 "To scan your card you'll need to update your phone settings" = "To scan your card, you'll need to update your phone settings";
 
 "Torch" = "Torch";
+
+"We use Stripe to verify your card details. Stripe may use and store your data according its privacy policy. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Learn more</u></a>" = "Please position your card within the rectangle above. OnBoard will use the camera to automatically extract and populate only the card information required on the form.";
