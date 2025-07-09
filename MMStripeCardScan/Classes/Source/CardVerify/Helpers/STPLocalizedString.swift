@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@_spi(STP) import StripeCore
+@_spi(STP) import MMStripeCore
 
 @inline(__always) func STPLocalizedString(_ key: String, _ comment: String?) -> String {
     return STPLocalizationUtils.localizedStripeString(

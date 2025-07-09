@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@_spi(STP) import StripeCore
+@_spi(STP) import MMStripeCore
 import UIKit
 
 /// Image configurations used for verification flow

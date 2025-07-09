@@ -131,7 +131,7 @@ extension AnalyticLoggableError where Self: Error {}
         let error = error as NSError
         if error.domain == STPError.stripeDomain {
             return error.userInfo[STPError.stripeRequestIDKey] as? String
-        } else if let error = error as? StripeCore.StripeError, case let .apiError(apiError) = error {
+        } else if let error = error as? MMStripeCore.StripeError, case let .apiError(apiError) = error {
             return apiError.requestID
         } else {
             return nil

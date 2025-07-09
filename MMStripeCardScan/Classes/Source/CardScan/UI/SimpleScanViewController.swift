@@ -1,4 +1,4 @@
-@_spi(STP) import StripeCore
+@_spi(STP) import MMStripeCore
 import UIKit
 
 // This class is all programmatic UI with a small bit of logic to handle

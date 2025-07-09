@@ -1,6 +1,6 @@
 {
   "name": "MMStripeCardScan",
-  "version": "1.5.4",
+  "version": "1.5.6",
   "summary": "Fork of StripeCardScan to support expiry dates and DNI detection",
   "description": "Modified CardScanSheet and SimpleScanViewController to expect expiryMonth and expiryYear. Also adds DNI scanning",
   "homepage": "https://github.com/egarroMADE/MMStripeCardScan",
@@ -13,19 +13,21 @@
   },
   "source": {
     "git": "https://github.com/egarroMADE/MMStripeCardScan.git",
-    "tag": "1.5.4"
+    "tag": "1.5.6"
   },
   "platforms": {
     "ios": "14.0"
   },
   "requires_arc": true,
+  "dependencies": {
+    "MMStripeCore": [
+      "1.0.0"
+    ]
+  },
   "source_files": "MMStripeCardScan/Classes/**/*",
   "swift_versions": [
     "5.0"
   ],
-  "dependencies": {
-    "StripeCore": []
-  },
   "resource_bundles": {
     "MMStripeCardScan": [
       "MMStripeCardScan/Classes/Resources/**/*.{lproj,mlmodelc}"

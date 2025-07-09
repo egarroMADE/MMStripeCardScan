@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double StripeCoreVersionNumber;
-FOUNDATION_EXPORT const unsigned char StripeCoreVersionString[];
+FOUNDATION_EXPORT double MMStripeCoreVersionNumber;
+FOUNDATION_EXPORT const unsigned char MMStripeCoreVersionString[];
 

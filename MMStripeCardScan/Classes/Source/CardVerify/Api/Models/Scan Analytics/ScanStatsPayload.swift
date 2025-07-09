@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@_spi(STP) import StripeCore
+@_spi(STP) import MMStripeCore
 
 /// Parent payload structure for uploading scan stats
 struct ScanStatsPayload: Encodable {

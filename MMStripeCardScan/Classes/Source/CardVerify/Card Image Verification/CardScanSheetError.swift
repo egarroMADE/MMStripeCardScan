@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@_spi(STP) import StripeCore
+@_spi(STP) import MMStripeCore
 
 /// Errors specific to the `CardImageVerificationSheet`.
 public enum CardScanSheetError: Error {

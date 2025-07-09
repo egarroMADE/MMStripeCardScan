@@ -10,7 +10,7 @@ import Foundation
 
 final class StripeCoreBundleLocator: BundleLocatorProtocol {
     static let internalClass: AnyClass = StripeCoreBundleLocator.self
-    static let bundleName = "StripeCoreBundle"
+    static let bundleName = "MMStripeCoreBundle"
     #if SWIFT_PACKAGE
         static let spmResourcesBundle = Bundle.module
     #endif

@@ -83,7 +83,7 @@ import UIKit
     }
 
     @_spi(STP) public static func isLinkAssertionError(error: Error) -> Bool {
-        if let error = error as? StripeCore.StripeError,
+        if let error = error as? MMStripeCore.StripeError,
            case let .apiError(apiError) = error,
            apiError.code == "link_failed_to_attest_request" {
             return true

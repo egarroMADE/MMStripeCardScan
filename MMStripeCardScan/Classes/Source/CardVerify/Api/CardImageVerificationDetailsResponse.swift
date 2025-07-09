@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@_spi(STP) import StripeCore
+@_spi(STP) import MMStripeCore
 
 struct CardImageVerificationExpectedCard: Decodable {
     let last4: String?

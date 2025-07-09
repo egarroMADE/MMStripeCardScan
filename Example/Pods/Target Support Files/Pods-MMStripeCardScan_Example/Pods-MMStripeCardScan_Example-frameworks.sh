@@ -177,11 +177,11 @@ code_sign_if_enabled() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/MMStripeCardScan/MMStripeCardScan.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/StripeCore/StripeCore.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MMStripeCore/MMStripeCore.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/MMStripeCardScan/MMStripeCardScan.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/StripeCore/StripeCore.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/MMStripeCore/MMStripeCore.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

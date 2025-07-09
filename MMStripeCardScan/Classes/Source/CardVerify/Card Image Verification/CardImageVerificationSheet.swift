@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@_spi(STP) import StripeCore
+@_spi(STP) import MMStripeCore
 import UIKit
 
 /// Typealias for backwards compatibility of new error type name

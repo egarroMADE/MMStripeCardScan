@@ -24,9 +24,11 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
-## StripeCore
+## MMStripeCore
 
-Copyright (c) 2023 egarroMADE <esteban@mademediacorp.com>
+The MIT License
+
+Copyright (c) 2011- Stripe, Inc. (https://stripe.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

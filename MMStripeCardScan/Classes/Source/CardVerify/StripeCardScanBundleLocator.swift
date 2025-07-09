@@ -7,7 +7,7 @@
 //
 
 import Foundation
-@_spi(STP) import StripeCore
+@_spi(STP) import MMStripeCore
 
 /// :nodoc:
 final class StripeCardScanBundleLocator: BundleLocatorProtocol {

@@ -1,22 +1,23 @@
 PODS:
-  - MMStripeCardScan (1.5.4):
-    - StripeCore
-  - StripeCore (24.16.2)
+  - MMStripeCardScan (1.5.6):
+    - MMStripeCore (= 1.0.0)
+  - MMStripeCore (1.0.0)
 
 DEPENDENCIES:
   - MMStripeCardScan (from `../`)
-  - StripeCore (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - MMStripeCore
 
 EXTERNAL SOURCES:
   MMStripeCardScan:
     :path: "../"
-  StripeCore:
-    :path: "../"
 
 SPEC CHECKSUMS:
-  MMStripeCardScan: a96c1b03bfe5c4d60b33ebfba6ae034d11444faa
-  StripeCore: f3a62397cecaf4da1827bcf07de7312ec1f3b96e
+  MMStripeCardScan: 581073fd1f5114e4fae4e1fe6a7a4a7f0b44f733
+  MMStripeCore: 54b952d136e803766f69cf02c43e5e3b3bbb16a7
 
-PODFILE CHECKSUM: 1d0aac04553cc98a5b0d7f281d7ef1ccf42b7090
+PODFILE CHECKSUM: 0429414c185acd8f2e4bd0c3dbfcc7883abe57f6
 
 COCOAPODS: 1.16.2
