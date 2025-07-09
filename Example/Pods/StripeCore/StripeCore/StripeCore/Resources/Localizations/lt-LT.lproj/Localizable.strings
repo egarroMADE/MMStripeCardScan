@@ -12,7 +12,7 @@
 
 "Try again" = "Bandyti dar kartą";
 
-"We use Stripe to verify your card details. Stripe may use and store your data according its privacy policy. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Learn more</u></a>" = "Naudojame \"Stripe\", kad patikrintume jūsų kortelės duomenis. \"Stripe\" gali naudoti ir saugoti jūsų duomenis pagal savo privatumo politiką. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Sužinokite daugiau</u></a>";
+"Please position your card within the rectangle above. OnBoard will use the camera to automatically extract and populate only the card information required on the form." = "Prašome kortelę pastatyti aukščiau esančiame stačiakampyje. „OnBoard“ naudos kamerą, kad automatiškai išgautų ir užpildytų tik formoje reikalaujamą kortelės informaciją.";
 
 "Your card has expired" = "Kortelė baigė galioti";
 

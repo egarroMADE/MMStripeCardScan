@@ -12,7 +12,7 @@
 
 "Try again" = "Subukan muli";
 
-"We use Stripe to verify your card details. Stripe may use and store your data according its privacy policy. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Learn more</u></a>" = "Gumagamit kami ng Stripe para i-verify ang mga detalye ng iyong kard. Maaaring gamitin at imbakin ng Stripe ang iyong data ayon sa patakaran sa privacy nito. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Alamin ang higit pa</u></a>";
+"Please position your card within the rectangle above. OnBoard will use the camera to automatically extract and populate only the card information required on the form." = "Mangyaring iposisyon ang iyong card sa loob ng parihaba sa itaas. Gagamitin ng OnBoard ang camera upang awtomatikong kunin at i-populate lamang ang impormasyon ng card na kinakailangan sa form.";
 
 "Your card has expired" = "Napaso na ang iyong kard";
 

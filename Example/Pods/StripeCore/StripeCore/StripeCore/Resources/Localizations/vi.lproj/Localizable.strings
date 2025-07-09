@@ -12,7 +12,7 @@
 
 "Try again" = "Thử lại";
 
-"We use Stripe to verify your card details. Stripe may use and store your data according its privacy policy. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Learn more</u></a>" = "Chúng tôi sử dụng Stripe để xác minh chi tiết thẻ của bạn. Stripe có thể sử dụng và lưu trữ dữ liệu của bạn theo chính sách quyền riêng tư của họ. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Tìm hiểu thêm</u></a>";
+"Please position your card within the rectangle above. OnBoard will use the camera to automatically extract and populate only the card information required on the form." = "Vui lòng đặt thẻ của bạn vào hình chữ nhật phía trên. OnBoard sẽ sử dụng camera để tự động trích xuất và chỉ điền thông tin thẻ cần thiết vào biểu mẫu.";
 
 "Your card has expired" = "Thẻ đã hết hạn";
 
