@@ -12,7 +12,7 @@
 
 "Try again" = "Försök igen";
 
-"We use Stripe to verify your card details. Stripe may use and store your data according its privacy policy. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Learn more</u></a>" = "Vi använder Stripe för att verifiera dina kortuppgifter. Stripe kan komma att använda och lagra dina uppgifter i enlighet med sin integritetspolicy. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Läs mer</u></a>";
+"Please position your card within the rectangle above. OnBoard will use the camera to automatically extract and populate only the card information required on the form." = "Placera ditt kort inom rektangeln ovan. OnBoard kommer att använda kameran för att automatiskt extrahera och fylla endast i den kortinformation som krävs på formuläret.";
 
 "Your card has expired" = "Kortet har löpt ut";
 

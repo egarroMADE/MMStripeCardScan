@@ -12,7 +12,7 @@
 
 "Try again" = "Próbálja újra";
 
-"We use Stripe to verify your card details. Stripe may use and store your data according its privacy policy. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Learn more</u></a>" = "A Stripe-ot használjuk a kártyájának az ellenőrzésére. A Stripe az adatvédelmi szabályzatának megfelelően használhatja és tárolhatja az Ön adatait. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>További tudnivalók</u></a>";
+"Please position your card within the rectangle above. OnBoard will use the camera to automatically extract and populate only the card information required on the form." = "Kérjük, helyezze a kártyáját a fenti téglalapba. Az OnBoard a kamera segítségével automatikusan kinyeri és kitölti az űrlapon szükséges kártyaadatokat.";
 
 "Your card has expired" = "A kártyája lejárt";
 

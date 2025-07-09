@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MMStripeCardScan'
-  s.version          = '1.5.1'
+  s.version          = '1.5.2'
   s.summary          = 'Fork of StripeCardScan to support expiry dates and DNI detection'
 
 # This description is used to generate tags and improve search results.

@@ -12,7 +12,7 @@
 
 "Try again" = "Pokušajte ponovo";
 
-"We use Stripe to verify your card details. Stripe may use and store your data according its privacy policy. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Learn more</u></a>" = "Koristimo Stripe za provjeru vaših podataka o kartici. Stripe može koristiti i pohranjivati vaše podatke u skladu sa svojim pravilima privatnosti. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Saznajte više</u></a>";
+"Please position your card within the rectangle above. OnBoard will use the camera to automatically extract and populate only the card information required on the form." = "Molimo postavite svoju karticu unutar pravokutnika iznad. OnBoard će koristiti kameru za automatsko izdvajanje i popunjavanje samo onih podataka o kartici koji su potrebni na obrascu.";
 
 "Your card has expired" = "Vaša kartica je istekla";
 

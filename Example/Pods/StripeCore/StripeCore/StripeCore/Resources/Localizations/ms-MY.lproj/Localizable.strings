@@ -12,7 +12,7 @@
 
 "Try again" = "Cuba lagi";
 
-"We use Stripe to verify your card details. Stripe may use and store your data according its privacy policy. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Learn more</u></a>" = "Kami menggunakan Stripe untuk mengesahkan butiran kad anda. Stripe mungkin menggunakan dan menyimpan data anda menurut dasar privasi Stripe. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Ketahui selanjutnya</u></a>";
+"Please position your card within the rectangle above. OnBoard will use the camera to automatically extract and populate only the card information required on the form." = "Sila letakkan kad anda dalam segi empat tepat di atas. OnBoard akan menggunakan kamera untuk mengekstrak dan mengisi hanya maklumat kad yang diperlukan pada borang secara automatik.";
 
 "Your card has expired" = "Kad anda telah tamat tempoh";
 
