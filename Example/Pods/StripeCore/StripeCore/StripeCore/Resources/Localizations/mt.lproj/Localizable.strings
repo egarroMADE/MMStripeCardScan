@@ -12,7 +12,7 @@
 
 "Try again" = "Erġa' pprova";
 
-"We use Stripe to verify your card details. Stripe may use and store your data according its privacy policy. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Learn more</u></a>" = "Aħna naħdmu ma' Stripe biex nivverifikaw id-dettalji tal-karta tiegħek. Stripe tista' tuża u taħżen id-dejta tiegħek skont il-politika tal-privatezza tagħha. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Sir af iktar</u></a>";
+"Please position your card within the rectangle above. OnBoard will use the camera to automatically extract and populate only the card information required on the form." = "Jekk jogħġbok poġġi l-karta tiegħek fir-rettangolu ta' hawn fuq. OnBoard se juża l-kamera biex awtomatikament jiġbed u jimla biss l-informazzjoni tal-karta meħtieġa fuq il-formola.";
 
 "Your card has expired" = "Il-kard tiegħek skadiet";
 

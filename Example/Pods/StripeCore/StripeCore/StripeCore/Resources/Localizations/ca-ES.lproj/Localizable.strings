@@ -12,7 +12,7 @@
 
 "Try again" = "Intenta-ho un altre cop";
 
-"We use Stripe to verify your card details. Stripe may use and store your data according its privacy policy. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Learn more</u></a>" = "Emprem Stripe per verificar els detalls de la vostra targeta. És possible que Stripe faci ús i emmagatzemi les dades d'acord amb la política de privadesa. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Més informació</u></a>";
+"Please position your card within the rectangle above. OnBoard will use the camera to automatically extract and populate only the card information required on the form." = "Si us plau, col·loqueu la vostra targeta dins del rectangle superior. OnBoard utilitzarà la càmera per extreure i omplir automàticament només la informació de la targeta requerida al formulari.";
 
 "Your card has expired" = "La teva targeta ha caducat";
 

@@ -12,7 +12,7 @@
 
 "Try again" = "もう一度お試しください";
 
-"We use Stripe to verify your card details. Stripe may use and store your data according its privacy policy. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Learn more</u></a>" = "Stripe を使用してカード詳細を確認します。Stripe はプライバシーポリシーに従ってお客様のデータを使用および保管することがあります。<a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>もっと知る</u></a>";
+"Please position your card within the rectangle above. OnBoard will use the camera to automatically extract and populate only the card information required on the form." = "カードを上の四角形内に配置してください。OnBoardはカメラを使用して、フォームに必要なカード情報のみを自動的に抽出し、入力します。";
 
 "Your card has expired" = "クレジットカードの有効期限が切れています";
 

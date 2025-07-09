@@ -12,7 +12,7 @@
 
 "Try again" = "Încercați din nou";
 
-"We use Stripe to verify your card details. Stripe may use and store your data according its privacy policy. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Learn more</u></a>" = "Folosim Stripe pentru a verifica detaliile cardului dvs. Stripe poate utiliza și stoca datele dvs. în conformitate cu politica sa de confidențialitate. <a href='https://support.stripe.com/questions/stripes-card-image-verification'><u>Aflați mai multe</u></a>";
+"Please position your card within the rectangle above. OnBoard will use the camera to automatically extract and populate only the card information required on the form." = "Vă rugăm să poziționați cardul în dreptunghiul de mai sus. OnBoard va folosi camera pentru a extrage și completa automat doar informațiile despre card solicitate în formular.";
 
 "Your card has expired" = "Cardul dvs. a expirat";
 
